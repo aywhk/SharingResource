@@ -1,0 +1,23 @@
+GitHub上传大文件
+技术标签： github
+
+最近需要把接近300M文件上传上去，找到了解决方法https://github.com/git-lfs/git-lfs，简单记录下。比如上传的文件是a.psd
+
+1.安装
+
+git lfs install
+2. 说明想对哪个文件用Git LFS
+
+git lfs track "*.psd"
+git add .gitattributes
+git commit -m "track *.psd files using Git LFS"
+3.上传文件命令（如常）
+
+git add a.psd
+git commit -m "add psd"
+ 可以输入如下命令确认下以上操作成功（如果成功，则能看到输出）
+
+git lfs ls-files
+ 最后再push上去
+
+git push origin master
