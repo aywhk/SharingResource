@@ -1,0 +1,14 @@
+Git LFS 大文件上传笔记（游戏补丁专用）
+首次上传（第一次推送必须绑定远程）开启 LFS 跟踪 zip 格式（只需执行 1 次）git lfs track "*.zip"
+添加文件（带空格 / 中文文件名用英文双引号）git add "STG_English (Patch).zip"
+提交备注git commit -m "上传 / 更新游戏补丁包"
+首次推送绑定远程git push --set-upstream origin master
+后续更新上传（已绑定远程，直接用）git add "文件名.zip"git commit -m "更新说明"git push
+常用检查命令
+查看文件修改状态
+git status
+查看 LFS 管理的大文件
+git lfs ls-files
+查看提交日志
+git log
+注意事项zip/rar/exe 等大文件必须用 LFS，否则上传失败提示 nothing to commit = 文件已提交，直接 push 即可文件名带空格、括号，必须用英文双引号包裹git lfs track "*.zip" 只需运行一次，后续不用重复
